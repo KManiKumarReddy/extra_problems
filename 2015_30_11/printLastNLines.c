@@ -60,9 +60,8 @@ void print(char *filename, int n) {
 		if (ch == '\n')
 			lines --;
 	}
-	while (fgets(s, sizeof(s), in) != NULL) {
-		printf("%s", s);
-	}
+	while ((ch = fgetc(in)) != EOF)
+		printf("%c", ch);
 	fclose(in);
 }
 
